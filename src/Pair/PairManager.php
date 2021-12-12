@@ -26,6 +26,9 @@ class PairManager implements PairManagerInterface, Exchange
     protected ?RatioProviderInterface $ratioProvider = null;
     protected Currencies $currencies;
 
+    /**
+     * @param string[] $currencyCodeList
+     */
     public function __construct(
         protected StorageInterface $storage,
         protected array $currencyCodeList,
