@@ -42,7 +42,7 @@ jobs:
         run: tools/vendor/bin/php-cs-fixer fix --dry-run --diff
 
       - name: Psalm
-        run: vendor/bin/psalm
+        run: vendor/bin/psalm --no-file-cache --no-cache
 
       - name: Run tests
         run: vendor/bin/phpunit --coverage-text

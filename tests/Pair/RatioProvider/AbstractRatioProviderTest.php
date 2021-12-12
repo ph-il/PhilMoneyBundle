@@ -93,6 +93,10 @@ abstract class AbstractRatioProviderTest extends TestCase
             $float = 0.31;
         }
 
+        if ($float >= 3) {
+            $float = 2.99;
+        }
+
         return $float;
     }
 }

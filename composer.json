@@ -58,7 +58,7 @@
     "scripts": {
         "fix": [
             "tools/vendor/bin/php-cs-fixer fix",
-            "vendor/bin/psalm --no-file-cache",
+            "vendor/bin/psalm --no-file-cache --no-cache",
             "vendor/bin/phpunit --coverage-text --coverage-html=.build"
         ]
     },

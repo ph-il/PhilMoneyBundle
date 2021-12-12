@@ -23,18 +23,29 @@ class MoneyConverter
         return new Currency($currency);
     }
 
+    /**
+     * @psalm-suppress ArgumentTypeCoercion
+     */
     public static function money(int|string $amount, Currency $currency): Money
     {
-        /* @psalm-var int|numeric-string $amount */
         return new Money($amount, $currency);
     }
 
+    /**
+     * @psalm-suppress InvalidScalarArgument,ArgumentTypeCoercion
+     */
     public static function currencyPair(Currency $base, Currency $currency, float|string $conversionRatio): CurrencyPair
     {
-        if (is_float($conversionRatio)) {
-            $conversionRatio = (string) $conversionRatio;
+        // This method doesn't exist in moneyphp ^4.0
+        // @codeCoverageIgnoreStart
+        if (!method_exists(Currency::class, 'isAvailableWithin')) {
+            // Moneyphp needs a string in ^4.0
+            if (is_float($conversionRatio)) {
+                $conversionRatio = (string) $conversionRatio;
+            }
         }
-        /* @psalm-var numeric-string $conversionRatio */
+        // @codeCoverageIgnoreEnd
+
         return new CurrencyPair($base, $currency, $conversionRatio);
     }
 }
