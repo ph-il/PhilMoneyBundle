@@ -39,7 +39,7 @@ jobs:
         run: phpcpd src tests
 
       - name: Run phpcsfixer
-        run: tools/vendor/bin/php-cs-fixer --dry-run --diff
+        run: tools/vendor/bin/php-cs-fixer fix --dry-run --diff
 
       - name: Psalm
         run: vendor/bin/psalm
