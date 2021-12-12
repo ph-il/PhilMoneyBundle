@@ -17,12 +17,18 @@ use Tbbc\MoneyBundle\Pair\StorageInterface;
  */
 class CsvStorage implements StorageInterface
 {
+    /**
+     * @psalm-var array<string, null|float>
+     */
     protected array $ratioList = [];
 
     public function __construct(protected string $ratioFileName, protected string $referenceCurrencyCode)
     {
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function loadRatioList(bool $force = false): array
     {
         if ((false === $force) && (count($this->ratioList) > 0)) {
@@ -84,9 +90,7 @@ class CsvStorage implements StorageInterface
     }
 
     /**
-     * @throws MoneyException
-     *
-     * @psalm-param array<string, null|float> $ratioList
+     * {@inheritdoc}
      */
     public function saveRatioList(array $ratioList): void
     {
