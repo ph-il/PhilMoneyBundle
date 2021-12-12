@@ -13,6 +13,7 @@ use Money\CurrencyPair;
 use Money\Exchange;
 use Money\Money;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Tbbc\MoneyBundle\MoneyConverter;
 use Tbbc\MoneyBundle\MoneyException;
 use Tbbc\MoneyBundle\TbbcMoneyEvents;
 
@@ -45,7 +46,7 @@ class PairManager implements PairManagerInterface, Exchange
     {
         $converter = new Converter($this->currencies, $this);
 
-        return $converter->convert($amount, new Currency($currencyCode));
+        return $converter->convert($amount, MoneyConverter::currency($currencyCode));
     }
 
     /**
@@ -55,7 +56,7 @@ class PairManager implements PairManagerInterface, Exchange
     {
         $ratio = $this->getRelativeRatio($baseCurrency->getCode(), $counterCurrency->getCode());
 
-        return new CurrencyPair($baseCurrency, $counterCurrency, $ratio);
+        return MoneyConverter::currencyPair($baseCurrency, $counterCurrency, $ratio);
     }
 
     /**
@@ -63,9 +64,7 @@ class PairManager implements PairManagerInterface, Exchange
      */
     public function saveRatio(string $currencyCode, float $ratio): void
     {
-        $currency = new Currency($currencyCode);
-        // end of hack
-        $ratio = floatval($ratio);
+        $currency = MoneyConverter::currency($currencyCode);
         if ($ratio <= 0) {
             throw new MoneyException('ratio has to be strictly positive');
         }
@@ -90,8 +89,8 @@ class PairManager implements PairManagerInterface, Exchange
      */
     public function getRelativeRatio(string $referenceCurrencyCode, string $currencyCode): float
     {
-        $currency = new Currency($currencyCode);
-        $referenceCurrency = new Currency($referenceCurrencyCode);
+        $currency = MoneyConverter::currency($currencyCode);
+        $referenceCurrency = MoneyConverter::currency($referenceCurrencyCode);
         if ($currencyCode === $referenceCurrencyCode) {
             return 1.0;
         }

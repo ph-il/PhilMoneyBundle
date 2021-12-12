@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tbbc\MoneyBundle\Money;
 
-use Money\Currency;
 use Money\Money;
+use Tbbc\MoneyBundle\MoneyConverter;
 
 /**
  * Class MoneyManager.
@@ -29,11 +29,11 @@ class MoneyManager implements MoneyManagerInterface
         if (is_null($currencyCode)) {
             $currencyCode = $this->referenceCurrencyCode;
         }
-        $currency = new Currency($currencyCode);
+        $currency = MoneyConverter::currency($currencyCode);
         $amountAsInt = $floatAmount * 10 ** $this->decimals;
         $amountAsInt = round($amountAsInt);
         $amountAsInt = intval($amountAsInt);
 
-        return new Money($amountAsInt, $currency);
+        return MoneyConverter::money($amountAsInt, $currency);
     }
 }

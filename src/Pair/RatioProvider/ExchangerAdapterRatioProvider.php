@@ -8,8 +8,8 @@ use Exception;
 use Exchanger\Contract\ExchangeRateProvider;
 use Exchanger\ExchangeRateQueryBuilder;
 use InvalidArgumentException;
-use Money\Currency;
 use Money\Exception\UnknownCurrencyException;
+use Tbbc\MoneyBundle\MoneyConverter;
 use Tbbc\MoneyBundle\MoneyException;
 use Tbbc\MoneyBundle\Pair\RatioProviderInterface;
 
@@ -53,9 +53,9 @@ final class ExchangerAdapterRatioProvider implements RatioProviderInterface
     private function ensureValidCurrency(string $currencyCode): void
     {
         try {
-            new Currency($currencyCode);
-        } catch (UnknownCurrencyException|InvalidArgumentException) {
-            throw new MoneyException(sprintf('The currency code %s does not exist', $currencyCode));
+            MoneyConverter::currency($currencyCode);
+        } catch (UnknownCurrencyException|InvalidArgumentException|MoneyException) {
+            throw new MoneyException(sprintf('The currency code "%s" does not exist', $currencyCode));
         }
     }
 }

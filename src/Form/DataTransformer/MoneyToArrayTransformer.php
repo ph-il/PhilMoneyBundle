@@ -9,6 +9,7 @@ use Money\Money;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
 use Symfony\Component\Form\Extension\Core\DataTransformer\MoneyToLocalizedStringTransformer;
+use Tbbc\MoneyBundle\MoneyConverter;
 
 /**
  * Transforms between a Money instance and an array.
@@ -68,9 +69,9 @@ class MoneyToArrayTransformer implements DataTransformerInterface
         /** @var string|Currency $currency */
         $currency = $value['tbbc_currency'];
         if (!$currency instanceof Currency) {
-            $currency = new Currency($currency);
+            $currency = MoneyConverter::currency($currency);
         }
 
-        return new Money($amount, $currency);
+        return MoneyConverter::money($amount, $currency);
     }
 }

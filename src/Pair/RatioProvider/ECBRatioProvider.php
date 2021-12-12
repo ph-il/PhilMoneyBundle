@@ -8,6 +8,7 @@ use InvalidArgumentException;
 use Money\Currency;
 use Money\Exception\UnknownCurrencyException;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Tbbc\MoneyBundle\MoneyConverter;
 use Tbbc\MoneyBundle\MoneyException;
 use Tbbc\MoneyBundle\Pair\RatioProviderInterface;
 
@@ -51,8 +52,8 @@ class ECBRatioProvider implements RatioProviderInterface
         }
 
         try {
-            $currency = new Currency($currencyCode);
-        } catch (UnknownCurrencyException|InvalidArgumentException) {
+            $currency = MoneyConverter::currency($currencyCode);
+        } catch (UnknownCurrencyException|InvalidArgumentException|MoneyException) {
             throw new MoneyException(sprintf('The currency code "%s" does not exists', $currencyCode));
         }
 

@@ -7,8 +7,8 @@ namespace Tbbc\MoneyBundle\Type;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
 use Doctrine\DBAL\Types\Type;
-use Money\Currency;
 use Money\Money;
+use Tbbc\MoneyBundle\MoneyConverter;
 
 /**
  * Stores Money in a single field, in the smallest unit (cents). eg "EUR 100"
@@ -40,7 +40,7 @@ class MoneyType extends Type
 
         [$currency, $amount] = explode(' ', (string) $value, 2);
 
-        return new Money((int) $amount, new Currency($currency));
+        return MoneyConverter::money($amount, MoneyConverter::currency($currency));
     }
 
     public function convertToDatabaseValue(mixed $value, AbstractPlatform $platform): ?string

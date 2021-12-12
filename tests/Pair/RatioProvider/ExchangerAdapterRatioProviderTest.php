@@ -28,9 +28,10 @@ class ExchangerAdapterRatioProviderTest extends AbstractRatioProviderTest
         return new ExchangerAdapterRatioProvider($exchanger);
     }
 
-    public function testUnknownCurrencyCode(): void
+    public function testInvalidCurrencyCode(): void
     {
         $this->expectException(MoneyException::class);
+        $this->expectExceptionMessage('The currency code "" does not exist');
 
         $ratiosSetup['EUR/123'] = $this->randomRatio(1, 3, 1);
         $service = new PhpArray($ratiosSetup);

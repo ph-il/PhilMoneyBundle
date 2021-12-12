@@ -22,7 +22,7 @@
         "ext-curl" : "*",
         "ext-intl": "*",
         "ext-simplexml": "*",
-        "moneyphp/money": "^3.3",
+        "moneyphp/money": "^3.3 | ^4.0",
         "symfony/form": "^5.4|^6.0",
         "symfony/twig-bundle": "^5.4|^6.0",
         "symfony/console": "^5.4|^6.0",
@@ -58,7 +58,7 @@
     "scripts": {
         "fix": [
             "tools/vendor/bin/php-cs-fixer fix",
-            "vendor/bin/psalm",
+            "vendor/bin/psalm --no-file-cache",
             "vendor/bin/phpunit --coverage-text --coverage-html=.build"
         ]
     },

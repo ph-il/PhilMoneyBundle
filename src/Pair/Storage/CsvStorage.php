@@ -7,6 +7,7 @@ namespace Tbbc\MoneyBundle\Pair\Storage;
 use InvalidArgumentException;
 use Money\Currency;
 use Money\Exception\UnknownCurrencyException;
+use Tbbc\MoneyBundle\MoneyConverter;
 use Tbbc\MoneyBundle\MoneyException;
 use Tbbc\MoneyBundle\Pair\StorageInterface;
 
@@ -61,7 +62,7 @@ class CsvStorage implements StorageInterface
             // @codeCoverageIgnoreStart
             try {
                 // hack to throw an exception if currency doesn't exist
-                new Currency($currencyCode);
+                MoneyConverter::currency($currencyCode);
             } catch (UnknownCurrencyException|InvalidArgumentException) {
                 throw new MoneyException('error in ratioFileName '.$this->ratioFileName.' on line '.$row.', unknown currency '.$currencyCode);
             }

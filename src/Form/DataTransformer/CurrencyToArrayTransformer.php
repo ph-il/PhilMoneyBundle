@@ -9,6 +9,8 @@ use Money\Currency;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
+use Tbbc\MoneyBundle\MoneyConverter;
+use Tbbc\MoneyBundle\MoneyException;
 
 /**
  * Transforms between a Currency and a string.
@@ -49,8 +51,12 @@ class CurrencyToArrayTransformer implements DataTransformerInterface
             return null;
         }
         try {
-            return new Currency($value['tbbc_name']);
-        } catch (InvalidArgumentException $e) {
+            if (!is_string($value['tbbc_name'])) {
+                throw new InvalidArgumentException();
+            }
+
+            return MoneyConverter::currency($value['tbbc_name']);
+        } catch (InvalidArgumentException|MoneyException $e) {
             throw new TransformationFailedException($e->getMessage());
         }
     }
