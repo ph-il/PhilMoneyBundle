@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Pair;
+namespace Phil\MoneyBundle\Tests\Pair;
 
 use Money\Money;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Tbbc\MoneyBundle\MoneyException;
-use Tbbc\MoneyBundle\Pair\PairManager;
-use Tbbc\MoneyBundle\Pair\RatioProvider\StaticRatioProvider;
-use Tbbc\MoneyBundle\Pair\Storage\CsvStorage;
-use Tbbc\MoneyBundle\Tests\MoneyAssert;
+use Phil\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\Pair\PairManager;
+use Phil\MoneyBundle\Pair\RatioProvider\StaticRatioProvider;
+use Phil\MoneyBundle\Pair\Storage\CsvStorage;
+use Phil\MoneyBundle\Tests\MoneyAssert;
 
 class PairManagerTest extends KernelTestCase
 {

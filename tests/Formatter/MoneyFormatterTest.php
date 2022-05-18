@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Formatter;
+namespace Phil\MoneyBundle\Tests\Formatter;
 
 use Locale;
 use Money\Currency;
 use Money\Money;
 use NumberFormatter;
 use PHPUnit\Framework\TestCase;
-use Tbbc\MoneyBundle\Formatter\MoneyFormatter;
+use Phil\MoneyBundle\Formatter\MoneyFormatter;
 
 class MoneyFormatterTest extends TestCase
 {

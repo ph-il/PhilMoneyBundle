@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Money;
+namespace Phil\MoneyBundle\Tests\Money;
 
 use PHPUnit\Framework\TestCase;
-use Tbbc\MoneyBundle\Money\MoneyManager;
+use Phil\MoneyBundle\Money\MoneyManager;
 
 class MoneyManagerTest extends TestCase
 {

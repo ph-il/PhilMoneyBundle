@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Form\DataTransformer;
+namespace Phil\MoneyBundle\Form\DataTransformer;
 
 use InvalidArgumentException;
 use Money\Currency;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
-use Tbbc\MoneyBundle\MoneyConverter;
-use Tbbc\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\MoneyConverter;
+use Phil\MoneyBundle\MoneyException;
 
 /**
  * Transforms between a Currency and a string.
@@ -29,7 +29,7 @@ class CurrencyToArrayTransformer implements DataTransformerInterface
             throw new UnexpectedTypeException($value, 'Currency');
         }
 
-        return ['tbbc_name' => $value->getCode()];
+        return ['phil_name' => $value->getCode()];
     }
 
     /**
@@ -47,15 +47,15 @@ class CurrencyToArrayTransformer implements DataTransformerInterface
             throw new UnexpectedTypeException($value, 'array');
         }
 
-        if (!isset($value['tbbc_name'])) {
+        if (!isset($value['phil_name'])) {
             return null;
         }
         try {
-            if (!is_string($value['tbbc_name'])) {
+            if (!is_string($value['phil_name'])) {
                 throw new InvalidArgumentException();
             }
 
-            return MoneyConverter::currency($value['tbbc_name']);
+            return MoneyConverter::currency($value['phil_name']);
         } catch (InvalidArgumentException|MoneyException $e) {
             throw new TransformationFailedException($e->getMessage());
         }

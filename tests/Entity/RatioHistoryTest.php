@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Entity;
+namespace Phil\MoneyBundle\Tests\Entity;
 
 use DateTime;
 use PHPUnit\Framework\TestCase;
-use Tbbc\MoneyBundle\Entity\RatioHistory;
+use Phil\MoneyBundle\Entity\RatioHistory;
 
 class RatioHistoryTest extends TestCase
 {
     public function testClassExists(): void
     {
-        $this->assertTrue(class_exists(\Tbbc\MoneyBundle\Entity\RatioHistory::class));
+        $this->assertTrue(class_exists(\Phil\MoneyBundle\Entity\RatioHistory::class));
     }
 
     public function testProperties(): void

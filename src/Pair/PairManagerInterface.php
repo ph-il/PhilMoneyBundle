@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Pair;
+namespace Phil\MoneyBundle\Pair;
 
 use Money\Money;
 
@@ -19,7 +19,7 @@ interface PairManagerInterface
     /**
      * set ratio between the currency in parameter and the reference currency.
      *
-     * WARNING: This method has to dispatch a \TbbcMoneyEvents::AFTER_RATIO_SAVE event
+     * WARNING: This method has to dispatch a \PhilMoneyEvents::AFTER_RATIO_SAVE event
      * with a SaveRatioEvent
      */
     public function saveRatio(string $currencyCode, float $ratio): void;

@@ -4,12 +4,12 @@
 
     <php>
         <server name="KERNEL_DIR" value="tests"/>
-        <env name="KERNEL_CLASS" value="Tbbc\MoneyBundle\Tests\AppKernel"/>
+        <env name="KERNEL_CLASS" value="Phil\MoneyBundle\Tests\AppKernel"/>
         <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
     </php>
 
     <testsuites>
-        <testsuite name="TbbcMoneyBundle test suite">
+        <testsuite name="PhilMoneyBundle test suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

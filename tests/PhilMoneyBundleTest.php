@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests;
+namespace Phil\MoneyBundle\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Tbbc\MoneyBundle\TbbcMoneyBundle;
+use Phil\MoneyBundle\PhilMoneyBundle;
 
-class TbbcMoneyBundleTest extends TestCase
+class PhilMoneyBundleTest extends TestCase
 {
     public function testBuild(): void
     {
@@ -16,7 +16,7 @@ class TbbcMoneyBundleTest extends TestCase
         $container
             ->expects($this->exactly(3))
             ->method('addCompilerPass');
-        $bundle = new TbbcMoneyBundle();
+        $bundle = new PhilMoneyBundle();
         $bundle->build($container);
     }
 }

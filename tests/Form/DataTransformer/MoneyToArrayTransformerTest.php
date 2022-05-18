@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Form\DataTransformer;
+namespace Phil\MoneyBundle\Tests\Form\DataTransformer;
 
 use Money\Currency;
 use Money\Money;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
-use Tbbc\MoneyBundle\Form\DataTransformer\MoneyToArrayTransformer;
+use Phil\MoneyBundle\Form\DataTransformer\MoneyToArrayTransformer;
 
 class MoneyToArrayTransformerTest extends TestCase
 {
@@ -19,8 +19,8 @@ class MoneyToArrayTransformerTest extends TestCase
         $transformer = new MoneyToArrayTransformer();
         self::assertSame(
             [
-                'tbbc_amount' => '1.00',
-                'tbbc_currency' => $currency,
+                'phil_amount' => '1.00',
+                'phil_currency' => $currency,
             ],
             $transformer->transform($value)
         );
@@ -41,7 +41,7 @@ class MoneyToArrayTransformerTest extends TestCase
 
     public function testReverseValueToCurrency(): void
     {
-        $value = ['tbbc_amount' => '1.00', 'tbbc_currency' => 'EUR'];
+        $value = ['phil_amount' => '1.00', 'phil_currency' => 'EUR'];
         $expected = new Money('100', new Currency('EUR'));
         $transformer = new MoneyToArrayTransformer();
         $transformed = $transformer->reverseTransform($value);
@@ -64,7 +64,7 @@ class MoneyToArrayTransformerTest extends TestCase
 
     public function testReverseToNullIfFormElementNotSet(): void
     {
-        $value = ['tbbc_name' => null];
+        $value = ['phil_name' => null];
         $transformer = new MoneyToArrayTransformer();
         self::assertNull($transformer->reverseTransform($value));
     }

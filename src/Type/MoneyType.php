@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Type;
+namespace Phil\MoneyBundle\Type;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
 use Doctrine\DBAL\Types\Type;
 use Money\Money;
-use Tbbc\MoneyBundle\MoneyConverter;
+use Phil\MoneyBundle\MoneyConverter;
 
 /**
  * Stores Money in a single field, in the smallest unit (cents). eg "EUR 100"

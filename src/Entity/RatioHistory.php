@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Entity;
+namespace Phil\MoneyBundle\Entity;
 
 use DateTime;
 use DateTimeInterface;

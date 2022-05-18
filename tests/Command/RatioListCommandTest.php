@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Command;
+namespace Phil\MoneyBundle\Tests\Command;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
-use Tbbc\MoneyBundle\Command\RatioListCommand;
-use Tbbc\MoneyBundle\Pair\PairManagerInterface;
+use Phil\MoneyBundle\Command\RatioListCommand;
+use Phil\MoneyBundle\Pair\PairManagerInterface;
 
 class RatioListCommandTest extends KernelTestCase
 {

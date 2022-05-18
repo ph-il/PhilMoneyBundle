@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\DependencyInjection;
+namespace Phil\MoneyBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class TbbcMoneyExtension extends Extension
+class PhilMoneyExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -37,14 +37,14 @@ class TbbcMoneyExtension extends Extension
         }
 
         $this->remapParameters($config, $container, [
-            'currencies' => 'tbbc_money.currencies',
-            'reference_currency' => 'tbbc_money.reference_currency',
-            'decimals' => 'tbbc_money.decimals',
-            'enable_pair_history' => 'tbbc_money.enable_pair_history',
-            'ratio_provider' => 'tbbc_money.ratio_provider',
+            'currencies' => 'phil_money.currencies',
+            'reference_currency' => 'phil_money.reference_currency',
+            'decimals' => 'phil_money.decimals',
+            'enable_pair_history' => 'phil_money.enable_pair_history',
+            'ratio_provider' => 'phil_money.ratio_provider',
         ]);
 
-        $container->setParameter('tbbc_money.pair.storage', $config['storage']);
+        $container->setParameter('phil_money.pair.storage', $config['storage']);
     }
 
     protected function remapParameters(array $config, ContainerBuilder $container, array $map): void

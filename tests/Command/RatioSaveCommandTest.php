@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Command;
+namespace Phil\MoneyBundle\Tests\Command;
 
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Tester\CommandTester;
-use Tbbc\MoneyBundle\Command\RatioSaveCommand;
-use Tbbc\MoneyBundle\MoneyException;
-use Tbbc\MoneyBundle\Pair\PairManagerInterface;
+use Phil\MoneyBundle\Command\RatioSaveCommand;
+use Phil\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\Pair\PairManagerInterface;
 
 class RatioSaveCommandTest extends TestCase
 {

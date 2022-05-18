@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle;
+namespace Phil\MoneyBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Tbbc\MoneyBundle\DependencyInjection\Compiler\PairHistoryCompilerPass;
-use Tbbc\MoneyBundle\DependencyInjection\Compiler\RatioProviderCompilerPass;
-use Tbbc\MoneyBundle\DependencyInjection\Compiler\StorageCompilerPass;
+use Phil\MoneyBundle\DependencyInjection\Compiler\PairHistoryCompilerPass;
+use Phil\MoneyBundle\DependencyInjection\Compiler\RatioProviderCompilerPass;
+use Phil\MoneyBundle\DependencyInjection\Compiler\StorageCompilerPass;
 
 /**
- * Class TbbcMoneyBundle.
+ * Class PhilMoneyBundle.
  */
-class TbbcMoneyBundle extends Bundle
+class PhilMoneyBundle extends Bundle
 {
     public function build(ContainerBuilder $container): void
     {

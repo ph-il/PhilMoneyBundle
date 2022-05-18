@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Form\DataTransformer;
+namespace Phil\MoneyBundle\Form\DataTransformer;
 
 use Money\Money;
 
@@ -27,7 +27,7 @@ class SimpleMoneyToArrayTransformer extends MoneyToArrayTransformer
             return null;
         }
 
-        unset($tab['tbbc_currency']);
+        unset($tab['phil_currency']);
 
         return $tab;
     }
@@ -38,7 +38,7 @@ class SimpleMoneyToArrayTransformer extends MoneyToArrayTransformer
     public function reverseTransform($value): ?Money
     {
         if (is_array($value)) {
-            $value['tbbc_currency'] = $this->currency;
+            $value['phil_currency'] = $this->currency;
         }
 
         return parent::reverseTransform($value);

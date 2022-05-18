@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Pair\RatioProvider;
+namespace Phil\MoneyBundle\Pair\RatioProvider;
 
 use InvalidArgumentException;
 use Money\Currency;
 use Money\Exception\UnknownCurrencyException;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-use Tbbc\MoneyBundle\MoneyConverter;
-use Tbbc\MoneyBundle\MoneyException;
-use Tbbc\MoneyBundle\Pair\RatioProviderInterface;
+use Phil\MoneyBundle\MoneyConverter;
+use Phil\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\Pair\RatioProviderInterface;
 
 /**
  * ECBRatioProvider

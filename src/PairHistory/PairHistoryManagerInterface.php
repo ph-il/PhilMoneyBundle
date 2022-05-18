@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\PairHistory;
+namespace Phil\MoneyBundle\PairHistory;
 
-use Tbbc\MoneyBundle\Pair\SaveRatioEvent;
+use Phil\MoneyBundle\Pair\SaveRatioEvent;
 
 /**
  * Interface PairHistoryManagerInterface.

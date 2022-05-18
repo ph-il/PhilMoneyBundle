@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Pair;
+namespace Phil\MoneyBundle\Pair;
 
 use DateTime;
 use Money\Converter;
@@ -13,9 +13,9 @@ use Money\CurrencyPair;
 use Money\Exchange;
 use Money\Money;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Tbbc\MoneyBundle\MoneyConverter;
-use Tbbc\MoneyBundle\MoneyException;
-use Tbbc\MoneyBundle\TbbcMoneyEvents;
+use Phil\MoneyBundle\MoneyConverter;
+use Phil\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\PhilMoneyEvents;
 
 /**
  * Class PairManager.
@@ -81,7 +81,7 @@ class PairManager implements PairManagerInterface, Exchange
             $savedAt
         );
 
-        $this->dispatcher->dispatch($event, TbbcMoneyEvents::AFTER_RATIO_SAVE);
+        $this->dispatcher->dispatch($event, PhilMoneyEvents::AFTER_RATIO_SAVE);
     }
 
     /**

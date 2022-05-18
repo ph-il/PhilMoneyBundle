@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle;
+namespace Phil\MoneyBundle;
 
 /**
  * Class MoneyException.

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Pair\RatioProvider;
+namespace Phil\MoneyBundle\Tests\Pair\RatioProvider;
 
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\MockHttpClient;
 use Symfony\Component\HttpClient\Response\MockResponse;
-use Tbbc\MoneyBundle\MoneyException;
-use Tbbc\MoneyBundle\Pair\RatioProvider\ECBRatioProvider;
+use Phil\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\Pair\RatioProvider\ECBRatioProvider;
 
 class ECBRatioProviderTest extends TestCase
 {

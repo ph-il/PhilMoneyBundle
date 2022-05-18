@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Templating\Helper;
+namespace Phil\MoneyBundle\Tests\Templating\Helper;
 
 use Money\Currency;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Tbbc\MoneyBundle\Formatter\MoneyFormatter;
-use Tbbc\MoneyBundle\Templating\Helper\CurrencyHelper;
+use Phil\MoneyBundle\Formatter\MoneyFormatter;
+use Phil\MoneyBundle\Templating\Helper\CurrencyHelper;
 
 class CurrencyHelperTest extends TestCase
 {
@@ -24,7 +24,7 @@ class CurrencyHelperTest extends TestCase
 
     public function testGetName(): void
     {
-        $this->assertSame('tbbc_money_currency_helper', $this->helper->getName());
+        $this->assertSame('phil_money_currency_helper', $this->helper->getName());
     }
 
     public function testName(): void

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Formatter;
+namespace Phil\MoneyBundle\Formatter;
 
 use Money\Currency;
 use Money\Money;

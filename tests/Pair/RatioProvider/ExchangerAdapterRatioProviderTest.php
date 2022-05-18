@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Pair\RatioProvider;
+namespace Phil\MoneyBundle\Tests\Pair\RatioProvider;
 
 use Exchanger\Exchanger;
 use Exchanger\Service\PhpArray;
-use Tbbc\MoneyBundle\MoneyException;
-use Tbbc\MoneyBundle\Pair\RatioProvider\ExchangerAdapterRatioProvider;
-use Tbbc\MoneyBundle\Pair\RatioProviderInterface;
+use Phil\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\Pair\RatioProvider\ExchangerAdapterRatioProvider;
+use Phil\MoneyBundle\Pair\RatioProviderInterface;
 
 class ExchangerAdapterRatioProviderTest extends AbstractRatioProviderTest
 {

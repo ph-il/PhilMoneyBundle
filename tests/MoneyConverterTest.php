@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests;
+namespace Phil\MoneyBundle\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Tbbc\MoneyBundle\MoneyConverter;
-use Tbbc\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\MoneyConverter;
+use Phil\MoneyBundle\MoneyException;
 
 class MoneyConverterTest extends TestCase
 {

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Form\Type;
+namespace Phil\MoneyBundle\Form\Type;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Tbbc\MoneyBundle\Form\DataTransformer\SimpleMoneyToArrayTransformer;
+use Phil\MoneyBundle\Form\DataTransformer\SimpleMoneyToArrayTransformer;
 
 /**
  * Formtype for the Money object.
@@ -40,7 +40,7 @@ class SimpleMoneyType extends MoneyType
         /** @var array<string, mixed> $amountOptions */
         $amountOptions = $options['amount_options'];
         $builder
-            ->add('tbbc_amount', TextType::class, $amountOptions)
+            ->add('phil_amount', TextType::class, $amountOptions)
         ;
 
         $transformer = new SimpleMoneyToArrayTransformer($this->decimals);
@@ -69,6 +69,6 @@ class SimpleMoneyType extends MoneyType
      */
     public function getBlockPrefix(): string
     {
-        return 'tbbc_simple_money';
+        return 'phil_simple_money';
     }
 }

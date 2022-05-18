@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Pair\RatioProvider;
+namespace Phil\MoneyBundle\Tests\Pair\RatioProvider;
 
-use Tbbc\MoneyBundle\Pair\RatioProvider\StaticRatioProvider;
-use Tbbc\MoneyBundle\Pair\RatioProviderInterface;
+use Phil\MoneyBundle\Pair\RatioProvider\StaticRatioProvider;
+use Phil\MoneyBundle\Pair\RatioProviderInterface;
 
 class StaticRatioProviderTest extends AbstractRatioProviderTest
 {

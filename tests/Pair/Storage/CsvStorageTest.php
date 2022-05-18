@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Pair\Storage;
+namespace Phil\MoneyBundle\Tests\Pair\Storage;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Tbbc\MoneyBundle\MoneyException;
-use Tbbc\MoneyBundle\Pair\Storage\CsvStorage;
+use Phil\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\Pair\Storage\CsvStorage;
 
 class CsvStorageTest extends KernelTestCase
 {

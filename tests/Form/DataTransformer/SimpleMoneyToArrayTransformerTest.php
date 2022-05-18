@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Form\DataTransformer;
+namespace Phil\MoneyBundle\Tests\Form\DataTransformer;
 
 use Money\Currency;
 use Money\Money;
 use PHPUnit\Framework\TestCase;
-use Tbbc\MoneyBundle\Form\DataTransformer\SimpleMoneyToArrayTransformer;
+use Phil\MoneyBundle\Form\DataTransformer\SimpleMoneyToArrayTransformer;
 
 class SimpleMoneyToArrayTransformerTest extends TestCase
 {
@@ -25,7 +25,7 @@ class SimpleMoneyToArrayTransformerTest extends TestCase
     public function testTransformValueToFormData(): void
     {
         self::assertSame(
-            ['tbbc_amount' => '10.00'],
+            ['phil_amount' => '10.00'],
             $this->transformer->transform($this->money)
         );
     }
@@ -39,12 +39,12 @@ class SimpleMoneyToArrayTransformerTest extends TestCase
     {
         self::assertSame(
             $this->money->getAmount(),
-            $this->transformer->reverseTransform(['tbbc_amount' => '10.00'])->getAmount()
+            $this->transformer->reverseTransform(['phil_amount' => '10.00'])->getAmount()
         );
 
         self::assertSame(
             $this->money->getCurrency()->getCode(),
-            $this->transformer->reverseTransform(['tbbc_amount' => '10.00'])->getCurrency()->getCode()
+            $this->transformer->reverseTransform(['phil_amount' => '10.00'])->getCurrency()->getCode()
         );
     }
 }

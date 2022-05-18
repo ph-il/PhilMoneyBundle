@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Command;
+namespace Phil\MoneyBundle\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Tbbc\MoneyBundle\MoneyException;
-use Tbbc\MoneyBundle\Pair\PairManagerInterface;
+use Phil\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\Pair\PairManagerInterface;
 
 /**
- * Class RatioFetchCommand.
+ * Class RatioFetchCommand.“
  */
 class RatioFetchCommand extends Command
 {
@@ -23,8 +23,8 @@ class RatioFetchCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('tbbc:money:ratio-fetch')
-            ->setHelp('The <info>tbbc:money:ratio-fetch</info> fetch all needed ratio from a external ratio provider')
+            ->setName('phil:money:ratio-fetch')
+            ->setHelp('The <info>phil:money:ratio-fetch</info> fetch all needed ratio from a external ratio provider')
             ->setDescription('fetch all needed ratio from a external ratio provider');
     }
 

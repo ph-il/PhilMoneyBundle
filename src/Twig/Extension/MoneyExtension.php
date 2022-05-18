@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Twig\Extension;
+namespace Phil\MoneyBundle\Twig\Extension;
 
 use Money\Money;
-use Tbbc\MoneyBundle\Formatter\MoneyFormatter;
-use Tbbc\MoneyBundle\Pair\PairManagerInterface;
+use Phil\MoneyBundle\Formatter\MoneyFormatter;
+use Phil\MoneyBundle\Pair\PairManagerInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 
@@ -47,6 +47,6 @@ class MoneyExtension extends AbstractExtension
 
     public function getName(): string
     {
-        return 'tbbc_money_extension';
+        return 'phil_money_extension';
     }
 }

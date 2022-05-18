@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\PairHistory;
+namespace Phil\MoneyBundle\Tests\PairHistory;
 
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Persistence\ObjectRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Tbbc\MoneyBundle\MoneyException;
-use Tbbc\MoneyBundle\Pair\SaveRatioEvent;
-use Tbbc\MoneyBundle\PairHistory\PairHistoryManager;
-use Tbbc\MoneyBundle\Tests\DatabaseTrait;
+use Phil\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\Pair\SaveRatioEvent;
+use Phil\MoneyBundle\PairHistory\PairHistoryManager;
+use Phil\MoneyBundle\Tests\DatabaseTrait;
 
 class PairHistoryManagerTest extends KernelTestCase
 {
@@ -29,7 +29,7 @@ class PairHistoryManagerTest extends KernelTestCase
             $this->em,
             'EUR'
         );
-        $this->ratioHistoryRepo = $this->em->getRepository('Tbbc\MoneyBundle\Entity\RatioHistory');
+        $this->ratioHistoryRepo = $this->em->getRepository('Phil\MoneyBundle\Entity\RatioHistory');
         $this->createDatabase();
     }
 

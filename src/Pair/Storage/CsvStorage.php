@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Pair\Storage;
+namespace Phil\MoneyBundle\Pair\Storage;
 
 use InvalidArgumentException;
 use Money\Currency;
 use Money\Exception\UnknownCurrencyException;
-use Tbbc\MoneyBundle\MoneyConverter;
-use Tbbc\MoneyBundle\MoneyException;
-use Tbbc\MoneyBundle\Pair\StorageInterface;
+use Phil\MoneyBundle\MoneyConverter;
+use Phil\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\Pair\StorageInterface;
 
 /**
  * Class CsvStorage.

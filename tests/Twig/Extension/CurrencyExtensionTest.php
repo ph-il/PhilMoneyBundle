@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Twig\Extension;
+namespace Phil\MoneyBundle\Tests\Twig\Extension;
 
 use Locale;
 use Money\Currency;
 use PHPUnit\Framework\TestCase;
-use Tbbc\MoneyBundle\Formatter\MoneyFormatter;
-use Tbbc\MoneyBundle\Twig\Extension\CurrencyExtension;
+use Phil\MoneyBundle\Formatter\MoneyFormatter;
+use Phil\MoneyBundle\Twig\Extension\CurrencyExtension;
 use Twig\Environment;
 use Twig\Loader\ArrayLoader;
 use Twig\TemplateWrapper;
@@ -27,7 +27,7 @@ class CurrencyExtensionTest extends TestCase
 
     public function testName(): void
     {
-        self::assertSame('tbbc_money_currency_extension', $this->extension->getName());
+        self::assertSame('phil_money_currency_extension', $this->extension->getName());
     }
 
     /**

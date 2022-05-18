@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Pair\Storage;
+namespace Phil\MoneyBundle\Tests\Pair\Storage;
 
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use Tbbc\MoneyBundle\Entity\DoctrineStorageRatio;
-use Tbbc\MoneyBundle\Pair\Storage\DoctrineStorage;
-use Tbbc\MoneyBundle\Tests\DatabaseTrait;
+use Phil\MoneyBundle\Entity\DoctrineStorageRatio;
+use Phil\MoneyBundle\Pair\Storage\DoctrineStorage;
+use Phil\MoneyBundle\Tests\DatabaseTrait;
 
 class DoctrineStorageTest extends KernelTestCase
 {

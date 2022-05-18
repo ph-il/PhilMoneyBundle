@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests;
+namespace Phil\MoneyBundle\Tests;
 
 use Money\Money;
 

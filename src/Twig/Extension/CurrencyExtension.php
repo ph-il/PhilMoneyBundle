@@ -6,9 +6,9 @@ declare(strict_types=1);
  * Date: 03/07/13.
  */
 
-namespace Tbbc\MoneyBundle\Twig\Extension;
+namespace Phil\MoneyBundle\Twig\Extension;
 
-use Tbbc\MoneyBundle\Formatter\MoneyFormatter;
+use Phil\MoneyBundle\Formatter\MoneyFormatter;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 
@@ -32,6 +32,6 @@ class CurrencyExtension extends AbstractExtension
 
     public function getName(): string
     {
-        return 'tbbc_money_currency_extension';
+        return 'phil_money_currency_extension';
     }
 }

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Form\Type;
+namespace Phil\MoneyBundle\Tests\Form\Type;
 
 use Locale;
 use Money\Money;
 use Symfony\Component\Form\PreloadedExtension;
 use Symfony\Component\Form\Test\TypeTestCase;
 use Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException;
-use Tbbc\MoneyBundle\Form\Type\CurrencyType;
-use Tbbc\MoneyBundle\Form\Type\MoneyType;
+use Phil\MoneyBundle\Form\Type\CurrencyType;
+use Phil\MoneyBundle\Form\Type\MoneyType;
 
 class MoneyTypeTest extends TypeTestCase
 {
@@ -29,13 +29,13 @@ class MoneyTypeTest extends TypeTestCase
         $view = $this->factory->create(MoneyType::class)
             ->createView();
 
-        self::assertSame('tbbc_money', $view->vars['id']);
+        self::assertSame('phil_money', $view->vars['id']);
         self::assertCount(2, $view->vars['form']->children);
-        $child = $view->vars['form']->children['tbbc_currency'];
-        self::assertSame('tbbc_money_tbbc_currency', $child->vars['id']);
+        $child = $view->vars['form']->children['phil_currency'];
+        self::assertSame('phil_money_phil_currency', $child->vars['id']);
 
-        $child = $view->vars['form']->children['tbbc_amount'];
-        self::assertSame('tbbc_money_tbbc_amount', $child->vars['id']);
+        $child = $view->vars['form']->children['phil_amount'];
+        self::assertSame('phil_money_phil_amount', $child->vars['id']);
     }
 
     public function testBindValid(): void
@@ -44,8 +44,8 @@ class MoneyTypeTest extends TypeTestCase
             'currency_type' => CurrencyType::class,
         ]);
         $form->submit([
-            'tbbc_currency' => ['tbbc_name' => 'EUR'],
-            'tbbc_amount' => '12',
+            'phil_currency' => ['phil_name' => 'EUR'],
+            'phil_amount' => '12',
         ]);
         $money = Money::EUR(1200);
         $this->assertSame($money->getAmount(), $form->getData()->getAmount());
@@ -59,8 +59,8 @@ class MoneyTypeTest extends TypeTestCase
             'currency_type' => CurrencyType::class,
         ]);
         $form->submit([
-            'tbbc_currency' => ['tbbc_name' => 'EUR'],
-            'tbbc_amount' => '12,5',
+            'phil_currency' => ['phil_name' => 'EUR'],
+            'phil_amount' => '12,5',
         ]);
         $money = Money::EUR(1250);
         $this->assertSame($money->getAmount(), $form->getData()->getAmount());
@@ -74,8 +74,8 @@ class MoneyTypeTest extends TypeTestCase
             'currency_type' => CurrencyType::class,
         ]);
         $form->submit([
-            'tbbc_currency' => ['tbbc_name' => 'EUR'],
-            'tbbc_amount' => '1 252,5',
+            'phil_currency' => ['phil_name' => 'EUR'],
+            'phil_amount' => '1 252,5',
         ]);
         $money = Money::EUR(125250);
         $this->assertSame($money->getAmount(), $form->getData()->getAmount());
@@ -91,7 +91,7 @@ class MoneyTypeTest extends TypeTestCase
         $form->setData(Money::EUR(120));
         $formView = $form->createView();
 
-        $this->assertSame('1,20', $formView->children['tbbc_amount']->vars['value']);
+        $this->assertSame('1,20', $formView->children['phil_amount']->vars['value']);
     }
 
     public function testOptions(): void
@@ -109,7 +109,7 @@ class MoneyTypeTest extends TypeTestCase
         $form->setData(Money::EUR(120));
         $formView = $form->createView();
 
-        $this->assertSame('1,20', $formView->children['tbbc_amount']->vars['value']);
+        $this->assertSame('1,20', $formView->children['phil_amount']->vars['value']);
     }
 
     public function testOptionsFailsIfNotValid(): void

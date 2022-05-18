@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Pair\Storage;
+namespace Phil\MoneyBundle\Pair\Storage;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Tbbc\MoneyBundle\Entity\DoctrineStorageRatio;
-use Tbbc\MoneyBundle\Pair\StorageInterface;
+use Phil\MoneyBundle\Entity\DoctrineStorageRatio;
+use Phil\MoneyBundle\Pair\StorageInterface;
 
 /**
  * Class DoctrineStorage.

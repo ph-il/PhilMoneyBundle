@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Command;
+namespace Phil\MoneyBundle\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Tbbc\MoneyBundle\MoneyException;
-use Tbbc\MoneyBundle\Pair\PairManagerInterface;
+use Phil\MoneyBundle\MoneyException;
+use Phil\MoneyBundle\Pair\PairManagerInterface;
 
 /**
  * Class RatioSaveCommand.
@@ -24,8 +24,8 @@ class RatioSaveCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('tbbc:money:ratio-save')
-            ->setHelp('The <info>tbbc:money:ratio-save</info> save a currency ratio')
+            ->setName('phil:money:ratio-save')
+            ->setHelp('The <info>phil:money:ratio-save</info> save a currency ratio')
             ->setDescription('save a currency ratio')
             ->addArgument(
                 'currencyCode',

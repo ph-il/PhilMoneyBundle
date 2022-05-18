@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Pair;
+namespace Phil\MoneyBundle\Pair;
 
 use DateTimeInterface;
 use Symfony\Contracts\EventDispatcher\Event;

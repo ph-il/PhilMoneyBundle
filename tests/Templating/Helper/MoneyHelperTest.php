@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Templating\Helper;
+namespace Phil\MoneyBundle\Tests\Templating\Helper;
 
 use Money\Currency;
 use Money\Money;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Tbbc\MoneyBundle\Formatter\MoneyFormatter;
-use Tbbc\MoneyBundle\Pair\PairManagerInterface;
-use Tbbc\MoneyBundle\Templating\Helper\MoneyHelper;
+use Phil\MoneyBundle\Formatter\MoneyFormatter;
+use Phil\MoneyBundle\Pair\PairManagerInterface;
+use Phil\MoneyBundle\Templating\Helper\MoneyHelper;
 
 class MoneyHelperTest extends TestCase
 {
@@ -96,6 +96,6 @@ class MoneyHelperTest extends TestCase
 
     public function testName(): void
     {
-        self::assertSame('tbbc_money_helper', $this->helper->getName());
+        self::assertSame('phil_money_helper', $this->helper->getName());
     }
 }

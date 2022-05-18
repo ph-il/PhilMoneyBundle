@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Templating\Helper;
+namespace Phil\MoneyBundle\Templating\Helper;
 
 use Money\Currency;
 use Money\Money;
 use Symfony\Component\Templating\Helper\Helper;
-use Tbbc\MoneyBundle\Formatter\MoneyFormatter;
-use Tbbc\MoneyBundle\Pair\PairManagerInterface;
+use Phil\MoneyBundle\Formatter\MoneyFormatter;
+use Phil\MoneyBundle\Pair\PairManagerInterface;
 
 /**
  * Class MoneyHelper.
@@ -75,6 +75,6 @@ class MoneyHelper extends Helper
      */
     public function getName(): string
     {
-        return 'tbbc_money_helper';
+        return 'phil_money_helper';
     }
 }

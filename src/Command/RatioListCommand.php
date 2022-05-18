@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Command;
+namespace Phil\MoneyBundle\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Tbbc\MoneyBundle\Pair\PairManagerInterface;
+use Phil\MoneyBundle\Pair\PairManagerInterface;
 
 /**
  * Class RatioListCommand.
@@ -22,8 +22,8 @@ class RatioListCommand extends Command
     protected function configure(): void
     {
         $this
-            ->setName('tbbc:money:ratio-list')
-            ->setHelp('The <info>tbbc:money:ratio-list</info> display list of registered ratio')
+            ->setName('phil:money:ratio-list')
+            ->setHelp('The <info>phil:money:ratio-list</info> display list of registered ratio')
             ->setDescription('display list of registered ratio');
     }
 

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Form\Type;
+namespace Phil\MoneyBundle\Tests\Form\Type;
 
 use Locale;
 use Money\Money;
 use Symfony\Component\Form\PreloadedExtension;
 use Symfony\Component\Form\Test\TypeTestCase;
 use Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException;
-use Tbbc\MoneyBundle\Form\Type\SimpleMoneyType;
-use Tbbc\MoneyBundle\Pair\PairManager;
+use Phil\MoneyBundle\Form\Type\SimpleMoneyType;
+use Phil\MoneyBundle\Pair\PairManager;
 
 class SimpleMoneyTypeTest extends TypeTestCase
 {
@@ -20,7 +20,7 @@ class SimpleMoneyTypeTest extends TypeTestCase
     {
         $form = $this->factory->create($this->simpleMoneyTypeClass, null, []);
         $form->submit([
-            'tbbc_amount' => '12',
+            'phil_amount' => '12',
         ]);
         $money = Money::EUR(1200);
         $this->assertSame($money->getAmount(), $form->getData()->getAmount());
@@ -32,7 +32,7 @@ class SimpleMoneyTypeTest extends TypeTestCase
         Locale::setDefault('fr_FR');
         $form = $this->factory->create($this->simpleMoneyTypeClass, null, []);
         $form->submit([
-            'tbbc_amount' => '1,2',
+            'phil_amount' => '1,2',
         ]);
         $money = Money::EUR(1200);
         $this->assertSame($money->getAmount(), $form->getData()->getAmount());
@@ -44,7 +44,7 @@ class SimpleMoneyTypeTest extends TypeTestCase
         Locale::setDefault('fr_FR');
         $form = $this->factory->create($this->simpleMoneyTypeClass, null, []);
         $form->submit([
-            'tbbc_amount' => '12,5',
+            'phil_amount' => '12,5',
         ]);
         $money = Money::EUR(1250);
         $this->assertSame($money->getAmount(), $form->getData()->getAmount());
@@ -56,7 +56,7 @@ class SimpleMoneyTypeTest extends TypeTestCase
         Locale::setDefault('fr_FR');
         $form = $this->factory->create($this->simpleMoneyTypeClass, null, []);
         $form->submit([
-            'tbbc_amount' => '1 252,5',
+            'phil_amount' => '1 252,5',
         ]);
         $money = Money::EUR(125250);
         $this->assertSame($money->getAmount(), $form->getData()->getAmount());
@@ -70,7 +70,7 @@ class SimpleMoneyTypeTest extends TypeTestCase
         $form->setData(Money::EUR(120));
         $formView = $form->createView();
 
-        $this->assertSame('1,20', $formView->children['tbbc_amount']->vars['value']);
+        $this->assertSame('1,20', $formView->children['phil_amount']->vars['value']);
     }
 
     public function testOptions(): void
@@ -84,7 +84,7 @@ class SimpleMoneyTypeTest extends TypeTestCase
         $form->setData(Money::EUR(120));
         $formView = $form->createView();
 
-        $this->assertSame('1,20', $formView->children['tbbc_amount']->vars['value']);
+        $this->assertSame('1,20', $formView->children['phil_amount']->vars['value']);
     }
 
     public function testOptionsFailsIfNotValid(): void
@@ -130,7 +130,7 @@ class SimpleMoneyTypeTest extends TypeTestCase
         Locale::setDefault('fr_FR');
         $form = $this->factory->create($this->simpleMoneyTypeClass, null, ['currency' => 'USD']);
         $form->submit([
-            'tbbc_amount' => '1 252,5',
+            'phil_amount' => '1 252,5',
         ]);
         $money = Money::USD(125250);
         $this->assertSame($money->getAmount(), $form->getData()->getAmount());

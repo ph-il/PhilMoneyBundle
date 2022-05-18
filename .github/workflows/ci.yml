@@ -10,7 +10,7 @@ jobs:
   ci:
     strategy:
       matrix:
-        php-versions: [ '8.0', '8.1' ]
+        php-versions: [ '8.1' ]
         composer-versions: ['update', 'update --prefer-lowest']
 
     runs-on: ubuntu-latest

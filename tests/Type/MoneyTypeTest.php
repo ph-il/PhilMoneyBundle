@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tbbc\MoneyBundle\Tests\Type;
+namespace Phil\MoneyBundle\Tests\Type;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\ConversionException;
@@ -10,7 +10,7 @@ use Money\Currency;
 use Money\Money;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Tbbc\MoneyBundle\Type\MoneyType;
+use Phil\MoneyBundle\Type\MoneyType;
 
 class MoneyTypeTest extends TestCase
 {
