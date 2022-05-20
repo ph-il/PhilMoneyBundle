@@ -46,7 +46,8 @@
         </service>
         <service id="phil_money.ratio_provider.google" class="%phil_money.ratio_provider.google.class%" public="true">
         </service>
-        <service id="phil_money.ratio_provider.ecb" class="%phil_money.ratio_provider.ecb.class%">
+        <service id="phil_money.ratio_provider.ecb" class="%phil_money.ratio_provider.ecb.class%" public="true">
+            <argument type="service" id="http_client" />
         </service>
         <!-- Formatter -->
         <service id="phil_money.formatter.money_formatter" class="%phil_money.formatter.money_formatter.class%" public="true">

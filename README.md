@@ -70,19 +70,7 @@ Installation
 Use [Composer](http://getcomposer.org/) and install with  
 `$ composer require phil/money-bundle`
 
-If you use Symfony 3 then add the bundle to AppKernel:
-
-```php
-    public function registerBundles()
-    {
-        $bundles = array(
-            // ...
-            new Phil\MoneyBundle\PhilMoneyBundle(),
-        );
-    }
-```
-
-For Symfony 4 and higher add the bundle to config/bundles.php (if it was not automatically added during the 
+For Symfony 6 and higher add the bundle to config/bundles.php (if it was not automatically added during the 
 installation of the package):
 
 ```php
