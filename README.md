@@ -2,16 +2,16 @@ PhilMoneyBundle
 ===============
 
 [![Build Status](https://img.shields.io/travis/TheBigBrainsCompany/PhilMoneyBundle/master.svg?style=flat-square)](https://travis-ci.org/TheBigBrainsCompany/PhilMoneyBundle)
-[![PHP](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg?style=flat-square)](https://php.net)
-[![Symfony](https://img.shields.io/badge/symfony-%5E4%7C%5E5-green.svg?style=flat-square)](https://symfony.com)
-[![Downloads](https://img.shields.io/packagist/dt/phil/money-bundle.svg?style=flat-square)](https://packagist.org/packages/phil/money-bundle/stats)
-[![Latest Stable Version](https://img.shields.io/packagist/v/phil/money-bundle.svg)](https://github.com/TheBigBrainsCompany/PhilMoneyBundle/releases/latest)
-[![license](https://img.shields.io/github/license/TheBigBrainsCompany/PhilMoneyBundle.svg?style=flat-square)](https://github.com/TheBigBrainsCompany/PhilMoneyBundle/blob/master/LICENSE)
+[![PHP](https://img.shields.io/badge/php-%3E%3D%208.1-8892BF.svg?style=flat-square)](https://php.net)
+[![Symfony](https://img.shields.io/badge/symfony-%5E6.3-green.svg?style=flat-square)](https://symfony.com)
+[![Downloads](https://img.shields.io/packagist/dt/ph-il/money-bundle.svg?style=flat-square)](https://packagist.org/packages/phil/money-bundle/stats)
+[![Latest Stable Version](https://img.shields.io/packagist/v/ph-il/money-bundle.svg)](https://github.com/TheBigBrainsCompany/PhilMoneyBundle/releases/latest)
+[![license](https://img.shields.io/github/license/ph-il/PhilMoneyBundle.svg?style=flat-square)](https://github.com/ph-il/PhilMoneyBundle/blob/main/LICENSE)
 
 This bundle is used to integrate the [Money library from mathiasverraes](https://github.com/mathiasverraes/money) into
 a Symfony project.
 
-This bundle is a fork of [PhilMoneyBundle](https://github.com/TheBigBrainsCompany/PhilMoneyBundle])
+This bundle is a fork of [TbbcMoneyBundle](https://github.com/TheBigBrainsCompany/TbbcMoneyBundle)
 
 This library is based on Fowler's [Money pattern](http://blog.verraes.net/2011/04/fowler-money-pattern-in-php/)
 
