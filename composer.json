@@ -26,14 +26,14 @@
         "ext-curl" : "*",
         "ext-intl": "*",
         "ext-simplexml": "*",
-        "moneyphp/money": "^4.0",
-        "symfony/form": "^6.1",
-        "symfony/twig-bundle": "^6.1",
-        "symfony/console": "^6.1",
-        "symfony/dom-crawler": "^6.1",
-        "symfony/event-dispatcher": "^6.1",
-        "symfony/templating": "^6.1",
-        "symfony/http-client": "^6.1"
+        "moneyphp/money": "^4.1",
+        "symfony/form": "^6.3",
+        "symfony/twig-bundle": "^6.3",
+        "symfony/console": "^6.3",
+        "symfony/dom-crawler": "^6.3",
+        "symfony/event-dispatcher": "^6.3",
+        "symfony/templating": "^6.3",
+        "symfony/http-client": "^6.3"
     },
     "autoload": {
         "psr-4": {
@@ -42,17 +42,17 @@
     },
     "require-dev": {
         "ext-sqlite3": "*",
-        "symfony/browser-kit": "^6.1",
-        "symfony/framework-bundle": "^6.1",
-        "doctrine/doctrine-bundle": "^2.6",
-        "doctrine/orm": "^2.12|^3.0",
-        "florianv/exchanger": "^2.7",
-        "php-http/message": "^1.13",
+        "symfony/browser-kit": "^6.3",
+        "symfony/framework-bundle": "^6.3",
+        "doctrine/doctrine-bundle": "^2.10",
+        "doctrine/orm": "^2.16|^3.0",
+        "florianv/exchanger": "^2.8",
+        "php-http/message": "^1.16",
         "php-http/guzzle7-adapter": "^1.0",
-        "vimeo/psalm": "^4.23",
-        "symfony/phpunit-bridge": "^6.1",
-        "phpunit/phpunit": "^9.5",
-        "symfony/yaml": "^6.1"
+        "vimeo/psalm": "^4.30",
+        "symfony/phpunit-bridge": "^6.3",
+        "phpunit/phpunit": "^9.6",
+        "symfony/yaml": "^6.3"
     },
     "autoload-dev": {
         "psr-4": {
@@ -67,8 +67,13 @@
         ]
     },
     "suggest": {
-        "doctrine/doctrine-bundle": "~2.6",
-        "doctrine/orm": "~2.12",
+        "doctrine/doctrine-bundle": "~2.10",
+        "doctrine/orm": "~2.16",
         "florianv/exchanger": "Exchanger is a PHP framework to work with currency exchange rates from various services."
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     }
 }
