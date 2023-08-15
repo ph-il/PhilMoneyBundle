@@ -1,7 +1,7 @@
 PhilMoneyBundle
 ===============
 
-[![Build Status](https://img.shields.io/travis/TheBigBrainsCompany/PhilMoneyBundle/master.svg?style=flat-square)](https://travis-ci.org/TheBigBrainsCompany/PhilMoneyBundle)
+[![Build Status](https://img.shields.io/travis/ph-il/PhilMoneyBundle/master.svg?style=flat-square)](https://travis-ci.org/TheBigBrainsCompany/PhilMoneyBundle)
 [![PHP](https://img.shields.io/badge/php-%3E%3D%208.1-8892BF.svg?style=flat-square)](https://php.net)
 [![Symfony](https://img.shields.io/badge/symfony-%5E6.3-green.svg?style=flat-square)](https://symfony.com)
 [![Downloads](https://img.shields.io/packagist/dt/ph-il/money-bundle.svg?style=flat-square)](https://packagist.org/packages/phil/money-bundle/stats)
@@ -644,7 +644,7 @@ phil_money:
 Contributing
 ------------
 
-1. Take a look at the [list of issues](https://github.com/TheBigBrainsCompany/PhilMoneyBundle/issues).
+1. Take a look at the [list of issues](https://github.com/ph-il/PhilMoneyBundle/issues).
 2. Fork
 3. Write a test (for either new feature or bug)
 4. Make a PR
@@ -652,14 +652,15 @@ Contributing
 Requirements
 ------------
 
-* PHP 5.3.9+
-* Symfony 2.8+
+* PHP 8.1.2+
+* Symfony 6.3+
 
 Authors
 -------
 
-Philippe Le Van - [kitpages.fr](http://www.kitpages.fr) - twitter : @plv  
-Thomas Tourlourat - [Wozbe](http://wozbe.com) - twitter: @armetiz  
+Philippe Gamache: [ph-il.ca][https://ph-il.ca]
+Philippe Le Van - [kitpages.fr](https://www.kitpages.fr) - x : @plv  
+Thomas Tourlourat - x: @armetiz  
 
 
 Status
