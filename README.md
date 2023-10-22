@@ -429,18 +429,16 @@ class IndexController extends Controller
 
 The ratio provider by default is base on the service 'phil_money.ratio_provider.ecb'
 
-This bundles contains three ratio providers :
+This bundles contains one ratio providers :
 
 * phil_money.ratio_provider.ecb based on the data provided here https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml
-* phil_money.ratio_provider.yahoo_finance based on the Yahoo finance APIs https://developer.yahoo.com/ (yahoo does not provide this api anymore)
-* phil_money.ratio_provider.google based on the https://www.google.com/finance/converter service (google does not provide this api anymore)
 
 You can change the service to use in the config.yml file :
 
 ```
 phil_money:
     [...]
-    ratio_provider: phil_money.ratio_provider.google
+    ratio_provider: phil_money.ratio_provider.ecb
 ```
 
 ### Additional rate providers from Exchanger

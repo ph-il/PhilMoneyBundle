@@ -11,10 +11,8 @@
         <parameter key="phil_money.pair_history_manager.class">Phil\MoneyBundle\PairHistory\PairHistoryManager</parameter>
         <parameter key="phil_money.pair.csv_storage.class">Phil\MoneyBundle\Pair\Storage\CsvStorage</parameter>
         <parameter key="phil_money.pair_manager.ratio_file_name">%kernel.project_dir%/../data/phil_money/ratio_file_name.csv</parameter>
-        <parameter key="phil_money.ratio_provider.google.class">Phil\MoneyBundle\Pair\RatioProvider\GoogleRatioProvider</parameter>
         <parameter key="phil_money.ratio_provider.ecb.class">Phil\MoneyBundle\Pair\RatioProvider\ECBRatioProvider</parameter>
         <parameter key="phil_money.formatter.money_formatter.class">Phil\MoneyBundle\Formatter\MoneyFormatter</parameter>
-
         <parameter key="phil_money.command.ratio_fetch.class">Phil\MoneyBundle\Command\RatioFetchCommand</parameter>
         <parameter key="phil_money.command.ratio_list.class">Phil\MoneyBundle\Command\RatioListCommand</parameter>
         <parameter key="phil_money.command.ratio_save.class">Phil\MoneyBundle\Command\RatioSaveCommand</parameter>
@@ -41,8 +39,6 @@
             <argument>%phil_money.reference_currency%</argument>
         </service>
         <!-- Ratio providers -->
-        <service id="phil_money.ratio_provider.google" class="%phil_money.ratio_provider.google.class%" public="true">
-        </service>
         <service id="phil_money.ratio_provider.ecb" class="%phil_money.ratio_provider.ecb.class%" public="true">
             <argument type="service" id="http_client" />
         </service>
