@@ -32,7 +32,6 @@
         "symfony/console": "^7.4|^8.0",
         "symfony/dom-crawler": "^7.4|^8.0",
         "symfony/event-dispatcher": "^7.4|^8.0",
-        "symfony/templating": "^7.4|^8.0",
         "symfony/http-client": "^7.4|^8.0"
     },
     "autoload": {
@@ -49,7 +48,6 @@
         "florianv/exchanger": "^2.8",
         "php-http/message": "^1.16",
         "php-http/guzzle7-adapter": "^1.0",
-        "vimeo/psalm": "^4.30",
         "symfony/phpunit-bridge": "^7.4|^8.0",
         "phpunit/phpunit": "^9.6",
         "symfony/yaml": "^7.4|^8.0"
