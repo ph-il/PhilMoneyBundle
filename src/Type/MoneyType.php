@@ -24,6 +24,12 @@ class MoneyType extends Type
 
     public function getSqlDeclaration(array $column, AbstractPlatform $platform): string
     {
+        // Check for DBAL 4.x method first
+        if (method_exists($platform, 'getStringTypeDeclarationSQLSnippet')) {
+            return $platform->getStringTypeDeclarationSQLSnippet($column);
+        }
+
+        // Fallback for DBAL 3.x and earlier
         return $platform->getVarcharTypeDeclarationSQL($column);
     }
 
