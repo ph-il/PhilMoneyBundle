@@ -6,6 +6,7 @@ namespace Phil\MoneyBundle\Formatter;
 
 use Money\Currency;
 use Money\Money;
+use NumberFormatter;
 
 /**
  * Money formatter.
@@ -26,9 +27,9 @@ class MoneyFormatter
      *
      * @see http://www.php.net/manual/en/numberformatter.formatcurrency.php
      */
-    public function localizedFormatMoney(Money $money, ?string $locale = null, ?\NumberFormatter $numberFormatter = null): string
+    public function localizedFormatMoney(Money $money, ?string $locale = null, ?NumberFormatter $numberFormatter = null): string
     {
-        if (!($numberFormatter instanceof \NumberFormatter)) {
+        if (!($numberFormatter instanceof NumberFormatter)) {
             $numberFormatter = $this->getDefaultNumberFormatter($money->getCurrency()->getCode(), $locale);
         }
 
@@ -83,12 +84,12 @@ class MoneyFormatter
     public function formatCurrencyAsSymbol(Currency $currency): string
     {
         // @todo make sure this returns the correct thing
-        $formatter = new \NumberFormatter(
+        $formatter = new NumberFormatter(
             sprintf('en-US@currency=%s', $this->formatCurrencyAsName($currency)),
-            \NumberFormatter::CURRENCY
+            NumberFormatter::CURRENCY
         );
 
-        return $formatter->getSymbol(\NumberFormatter::CURRENCY_SYMBOL);
+        return $formatter->getSymbol(NumberFormatter::CURRENCY_SYMBOL);
     }
 
     /**
@@ -107,14 +108,14 @@ class MoneyFormatter
         return $money->getCurrency();
     }
 
-    protected function getDefaultNumberFormatter(string $currencyCode, string $locale = null): \NumberFormatter
+    protected function getDefaultNumberFormatter(string $currencyCode, ?string $locale = null): NumberFormatter
     {
         if (is_null($locale)) {
             $locale = \Locale::getDefault();
         }
-        $numberFormatter = new \NumberFormatter($locale, \NumberFormatter::CURRENCY);
-        $numberFormatter->setTextAttribute(\NumberFormatter::CURRENCY_CODE, $currencyCode);
-        $numberFormatter->setAttribute(\NumberFormatter::FRACTION_DIGITS, $this->decimals);
+        $numberFormatter = new NumberFormatter($locale, NumberFormatter::CURRENCY);
+        $numberFormatter->setTextAttribute(NumberFormatter::CURRENCY_CODE, $currencyCode);
+        $numberFormatter->setAttribute(NumberFormatter::FRACTION_DIGITS, $this->decimals);
 
         return $numberFormatter;
     }
