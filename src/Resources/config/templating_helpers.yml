@@ -1,0 +1,19 @@
+parameters:
+  phil_money.templating.helper.money.class: Phil\MoneyBundle\Templating\Helper\MoneyHelper
+  phil_money.templating.helper.currency.class: Phil\MoneyBundle\Templating\Helper\CurrencyHelper
+
+services:
+  phil_money.templating.helper.money:
+    class: '%phil_money.templating.helper.money.class%'
+    arguments:
+      - '@phil_money.formatter.money_formatter'
+      - '@phil_money.pair_manager'
+    tags:
+      - { name: templating.helper, alias: phil_money }
+
+  phil_money.templating.helper.currency:
+    class: '%phil_money.templating.helper.currency.class%'
+    arguments:
+      - '@phil_money.formatter.money_formatter'
+    tags:
+      - { name: templating.helper, alias: phil_money_currency }

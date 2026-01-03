@@ -1,0 +1,29 @@
+parameters:
+  phil_money.form_type.money.class: Phil\MoneyBundle\Form\Type\MoneyType
+  phil_money.form_type.currency.class: Phil\MoneyBundle\Form\Type\CurrencyType
+  phil_money.form_type.simple_money.class: Phil\MoneyBundle\Form\Type\SimpleMoneyType
+
+services:
+  phil_money.form_type.currency:
+    class: '%phil_money.form_type.currency.class%'
+    arguments:
+      - '%phil_money.currencies%'
+      - '%phil_money.reference_currency%'
+    tags:
+      - { name: form.type, alias: phil_currency }
+
+  phil_money.form_type.money:
+    class: '%phil_money.form_type.money.class%'
+    arguments:
+      - '%phil_money.decimals%'
+    tags:
+      - { name: form.type, alias: phil_money }
+
+  phil_money.form_type.simple_money:
+    class: '%phil_money.form_type.simple_money.class%'
+    arguments:
+      - '%phil_money.decimals%'
+      - '%phil_money.currencies%'
+      - '%phil_money.reference_currency%'
+    tags:
+      - { name: form.type, alias: phil_simple_money }

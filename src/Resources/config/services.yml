@@ -1,0 +1,85 @@
+parameters:
+  phil_money.pair_manager.class: Phil\MoneyBundle\Pair\PairManager
+  phil_money.pair_manager_interface.class: Phil\MoneyBundle\Pair\PairManagerInterface
+  phil_money.money_manager.class: Phil\MoneyBundle\Money\MoneyManager
+  phil_money.pair_history_manager.class: Phil\MoneyBundle\PairHistory\PairHistoryManager
+  phil_money.pair.csv_storage.class: Phil\MoneyBundle\Pair\Storage\CsvStorage
+  phil_money.pair_manager.ratio_file_name: '%kernel.project_dir%/../data/phil_money/ratio_file_name.csv'
+  phil_money.ratio_provider.ecb.class: Phil\MoneyBundle\Pair\RatioProvider\ECBRatioProvider
+  phil_money.formatter.money_formatter.class: Phil\MoneyBundle\Formatter\MoneyFormatter
+  phil_money.command.ratio_fetch.class: Phil\MoneyBundle\Command\RatioFetchCommand
+  phil_money.command.ratio_list.class: Phil\MoneyBundle\Command\RatioListCommand
+  phil_money.command.ratio_save.class: Phil\MoneyBundle\Command\RatioSaveCommand
+
+services:
+  phil_money.pair_manager:
+    class: '%phil_money.pair_manager.class%'
+    public: true
+    arguments:
+      - '@phil_money.pair.csv_storage'
+      - '%phil_money.currencies%'
+      - '%phil_money.reference_currency%'
+      - '@event_dispatcher'
+
+  '%phil_money.pair_manager_interface.class%':
+    alias: phil_money.pair_manager
+    public: false
+
+  phil_money.money_manager:
+    class: '%phil_money.money_manager.class%'
+    public: true
+    arguments:
+      - '%phil_money.reference_currency%'
+      - '%phil_money.decimals%'
+
+  '%phil_money.money_manager.class%':
+    alias: phil_money.money_manager
+    public: false
+
+  # Storage
+  phil_money.pair.csv_storage:
+    class: '%phil_money.pair.csv_storage.class%'
+    public: true
+    arguments:
+      - '%phil_money.pair_manager.ratio_file_name%'
+      - '%phil_money.reference_currency%'
+
+  # Ratio providers
+  phil_money.ratio_provider.ecb:
+    class: '%phil_money.ratio_provider.ecb.class%'
+    public: true
+    arguments:
+      - '@http_client'
+
+  # Formatter
+  phil_money.formatter.money_formatter:
+    class: '%phil_money.formatter.money_formatter.class%'
+    public: true
+    arguments:
+      - '%phil_money.decimals%'
+
+  '%phil_money.formatter.money_formatter.class%':
+    alias: phil_money.formatter.money_formatter
+    public: false
+
+  # Commands
+  phil_money.command.ratio_fetch:
+    class: '%phil_money.command.ratio_fetch.class%'
+    arguments:
+      - '@phil_money.pair_manager'
+    tags:
+      - { name: console.command, command: 'phil:money:ratio-fetch' }
+
+  phil_money.command.ratio_list:
+    class: '%phil_money.command.ratio_list.class%'
+    arguments:
+      - '@phil_money.pair_manager'
+    tags:
+      - { name: console.command, command: 'phil:money:ratio-list' }
+
+  phil_money.command.ratio_save:
+    class: '%phil_money.command.ratio_save.class%'
+    arguments:
+      - '@phil_money.pair_manager'
+    tags:
+      - { name: console.command, command: 'phil:money:ratio-save' }

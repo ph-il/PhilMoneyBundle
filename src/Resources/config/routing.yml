@@ -1,0 +1,4 @@
+phil_money_currency_list:
+        path: /currency-list
+        defaults:
+        _controller: PhilMoneyBundle:Currency:list

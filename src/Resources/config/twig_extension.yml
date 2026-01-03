@@ -1,0 +1,21 @@
+parameters:
+  phil_money.twig.money.class: Phil\MoneyBundle\Twig\Extension\MoneyExtension
+  phil_money.twig.currency.class: Phil\MoneyBundle\Twig\Extension\CurrencyExtension
+
+services:
+    phil_money.twig.money:
+      class: "%phil_money.twig.money.class%"
+      public: true
+      arguments:
+        - "@phil_money.formatter.money_formatter"
+        - "@phil_money.pair_manager"
+      tags:
+        - {name: "twig.extension"}
+
+    phil_money.twig.currency:
+      class: "%phil_money.twig.currency.class%"
+      public: true
+      arguments:
+        - "@phil_money.formatter.money_formatter"
+      tags:
+        - {name: "twig.extension"}

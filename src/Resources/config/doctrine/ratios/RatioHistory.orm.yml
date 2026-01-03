@@ -1,0 +1,28 @@
+Phil\MoneyBundle\Entity\RatioHistory:
+  type: entity
+  table: phil_money_ratio_history
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    currencyCode:
+      type: string
+      column: currency_code
+      length: 3
+      nullable: false
+    referenceCurrencyCode:
+      type: string
+      column: reference_currency_code
+      length: 3
+      nullable: false
+    ratio:
+      type: float
+      column: ratio
+      length: 255
+      nullable: false
+    savedAt:
+      type: datetime
+      column: saved_at
+      nullable: false
